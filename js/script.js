@@ -10,7 +10,7 @@ const getUserInput = () => {
     searchResult.textContent = '';
 
     if (userText == '') {
-        searchMessage.innerText = 'Please write something!';
+        searchMessage.innerText = 'Please write something!'; // message for empty field.
     }
     else {
         const url = `https://openlibrary.org/search.json?q=${userText}`;
@@ -31,8 +31,10 @@ const displaySearchResult = books => {
     const resultFound = books.numFound;
     searchMessage.innerText = ` We found ${resultFound} books for you.
     `;
-    console.log(books);
+
     const bookList = books.docs;
+
+    // looping through the book list
     bookList.forEach(eachElement => {
         const bookName = eachElement.title;
         const authorName = eachElement.author_name;
@@ -43,7 +45,7 @@ const displaySearchResult = books => {
         // cover photo link
         const url = `https://covers.openlibrary.org/b/id/${coverPhotoId}-M.jpg`;
 
-
+        // update dynamic content
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
