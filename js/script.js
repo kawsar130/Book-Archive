@@ -47,7 +47,7 @@ const displaySearchResult = books => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <img src="${url}" height="300px" width="250px" class="card-img-top" alt="...">
+        <img src="${url}" height="300px" width="200px" class="card-img-top" alt="...">
         <div class="card-body">
         <h4 class="card-title">${bookName}</h4>
         <h6 class="card-text">Author: ${authorName}</h6>
